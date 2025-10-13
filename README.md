@@ -18,6 +18,54 @@ A modern, responsive React application for fish identification and nutritional a
 - **Frontend**: React 19.1.1 with Vite
 - **Styling**: Tailwind CSS with custom marine theme
 - **Routing**: React Router DOM v6
+- **Icons**: React Icons
+- **Charts**: Recharts for nutritional data visualization
+- **Images**: Unsplash API for fish species images
+
+## 🚀 Live Demo
+
+🌐 **Live App**: [Matsya Drishti on Netlify](https://matsya-drishti.netlify.app)
+
+## 📋 Quick Start
+
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/matsya-drishti.git
+cd matsya-drishti
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+### Build for Production
+```bash
+# Create optimized production build
+npm run build
+
+# Preview production build locally
+npm run preview
+```
+
+## 🌐 Deployment
+
+### Deploy to Netlify
+1. Push your code to GitHub
+2. Connect your GitHub repo to Netlify
+3. Set build command: `npm run build`
+4. Set publish directory: `dist`
+5. Deploy! 🚀
+
+The project includes:
+- `netlify.toml` - Netlify configuration
+- `public/_redirects` - SPA routing support
 - **HTTP Client**: Axios for API calls
 - **Icons**: Emoji-based icons for cross-platform compatibility
 - **Design**: Mobile-first responsive design
