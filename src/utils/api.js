@@ -32,16 +32,15 @@ const MOCK_FISH_DATA = {
 };
 
 const MOCK_POPULAR_FISH = [
-  { id: 1, name: 'Salmon', image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=300&h=200&fit=crop', confidence: 95 },
-  { id: 2, name: 'Tuna', image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=300&h=200&fit=crop', confidence: 92 },
-  { id: 3, name: 'Rohu', image: 'https://images.unsplash.com/photo-1498654896293-37aacf113fd9?w=300&h=200&fit=crop', confidence: 88 },
-  { id: 4, name: 'Catla', image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=200&fit=crop', confidence: 90 },
-  { id: 5, name: 'Hilsa', image: 'https://images.unsplash.com/photo-1544552866-d3ed42536cfd?w=300&h=200&fit=crop', confidence: 94 },
-  { id: 6, name: 'Pomfret', image: 'https://images.unsplash.com/photo-1615141982883-c7ad0e69fd62?w=300&h=200&fit=crop', confidence: 89 },
-  { id: 7, name: 'Mackerel', image: 'https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?w=300&h=200&fit=crop', confidence: 91 },
-  { id: 8, name: 'Cod', image: 'https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=300&h=200&fit=crop', confidence: 87 },
-  { id: 9, name: 'Tilapia', image: 'https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?w=300&h=200&fit=crop', confidence: 93 },
-  { id: 10, name: 'Carp', image: 'https://images.unsplash.com/photo-1590736969955-71cc94901144?w=300&h=200&fit=crop', confidence: 86 },
+  { id: 1, name: 'Tuna', image: '/fish images/tuna.jpeg', confidence: 95 },
+  { id: 2, name: 'Rohu', image: '/fish images/rohu.jpeg', confidence: 92 },
+  { id: 3, name: 'Catla', image: '/fish images/catla.jpeg', confidence: 90 },
+  { id: 4, name: 'Pomfret', image: '/fish images/pomfret.jpeg', confidence: 89 },
+  { id: 5, name: 'Tilapia', image: '/fish images/talipia.jpeg', confidence: 93 },
+  { id: 6, name: 'Common Carp', image: '/fish images/common carp.jpeg', confidence: 88 },
+  { id: 7, name: 'Silver Carp', image: '/fish images/silver carp.jpeg', confidence: 87 },
+  { id: 8, name: 'Mrigal', image: '/fish images/mrigal.jpeg', confidence: 91 },
+  { id: 9, name: 'Gurame', image: '/fish images/gurame.jpeg', confidence: 86 },
 ];
 
 const MOCK_HISTORY = [
