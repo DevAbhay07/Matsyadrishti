@@ -23,8 +23,8 @@ const FishCard = ({ fish, onClick, className = '' }) => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Compact Image container with responsive sizing */}
-      <div className="relative h-16 sm:h-20 md:h-24 rounded-lg overflow-hidden bg-gray-100 mb-2">
+      {/* Image container - responsive for both slider and grid */}
+      <div className="relative h-16 sm:h-20 md:h-24 rounded-lg overflow-hidden bg-gray-100 mb-2 flex-shrink-0">
         {/* Loading skeleton */}
         {!imageLoaded && (
           <div className="absolute inset-0 bg-gray-200 animate-pulse">

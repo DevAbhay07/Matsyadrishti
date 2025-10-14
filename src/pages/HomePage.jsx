@@ -67,9 +67,6 @@ const HomePage = () => {
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white tracking-wide mb-1 drop-shadow-lg">
             Matsya Drishti
           </h1>
-          <p className="text-white/90 text-xs sm:text-sm font-medium tracking-wider uppercase drop-shadow-md">
-            AI-POWERED MARINE INTELLIGENCE
-          </p>
         </div>
       </header>
       
@@ -109,7 +106,7 @@ const HomePage = () => {
         
         {/* Popular Species Section - More responsive */}
         <div className="w-full">
-          <h2 className="text-lg sm:text-xl font-semibold text-white mb-4 text-center drop-shadow-md">Popular Species</h2>
+          <h2 className="text-lg sm:text-xl font-semibold text-white mb-4 text-left drop-shadow-md">Popular Species</h2>
           <PopularFishSlider />
         </div>
       </div>
