@@ -340,7 +340,7 @@ body {
   }
   
   .glass-card {
-    background: var(--surface-primary);
+    background: linear-gradient(135deg, rgba(179, 229, 252, 0.2) 0%, rgba(129, 212, 250, 0.15) 50%, rgba(79, 195, 247, 0.1) 100%);
     backdrop-filter: blur(8px);
     border: 1px solid var(--border-light);
     border-radius: 16px;
@@ -349,14 +349,14 @@ body {
   }
   
   .glass-card:hover {
-    background: var(--surface-secondary);
+    background: linear-gradient(135deg, rgba(179, 229, 252, 0.35) 0%, rgba(129, 212, 250, 0.25) 50%, rgba(79, 195, 247, 0.15) 100%);
     transform: translateY(-2px);
     box-shadow: 0 8px 32px var(--shadow-medium);
     border-color: var(--border-medium);
   }
   
   .glass-panel {
-    background: var(--surface-secondary);
+    background: linear-gradient(135deg, rgba(179, 229, 252, 0.4) 0%, rgba(129, 212, 250, 0.3) 50%, rgba(79, 195, 247, 0.2) 100%);
     backdrop-filter: blur(10px);
     border: 1px solid var(--border-medium);
     border-radius: 20px;
@@ -627,7 +627,7 @@ body {
   }
   
   .glass-card {
-    background: rgba(255, 255, 255, 0.15);
+    background: linear-gradient(135deg, rgba(179, 229, 252, 0.2) 0%, rgba(129, 212, 250, 0.15) 50%, rgba(79, 195, 247, 0.1) 100%);
     backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 16px;
@@ -635,13 +635,13 @@ body {
   }
   
   .glass-card:hover {
-    background: rgba(255, 255, 255, 0.25);
+    background: linear-gradient(135deg, rgba(179, 229, 252, 0.35) 0%, rgba(129, 212, 250, 0.25) 50%, rgba(79, 195, 247, 0.15) 100%);
     transform: translateY(-2px);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   }
   
   .glass-panel {
-    background: rgba(255, 255, 255, 0.25);
+    background: linear-gradient(135deg, rgba(179, 229, 252, 0.4) 0%, rgba(129, 212, 250, 0.3) 50%, rgba(79, 195, 247, 0.2) 100%);
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 24px;
@@ -709,7 +709,7 @@ body {
   }
   
   .stat-card {
-    background: var(--surface-secondary);
+    background: linear-gradient(135deg, rgba(179, 229, 252, 0.3) 0%, rgba(129, 212, 250, 0.25) 50%, rgba(79, 195, 247, 0.2) 100%);
     backdrop-filter: blur(8px);
     border: 1px solid var(--border-light);
     border-radius: 16px;
@@ -721,7 +721,7 @@ body {
   }
   
   .stat-card:hover {
-    background: var(--surface-primary);
+    background: linear-gradient(135deg, rgba(179, 229, 252, 0.5) 0%, rgba(129, 212, 250, 0.4) 50%, rgba(79, 195, 247, 0.3) 100%);
     transform: translateY(-4px);
     box-shadow: 0 8px 30px var(--shadow-medium);
     border-color: var(--border-medium);
