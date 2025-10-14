@@ -98,7 +98,7 @@ const HelpPage = () => {
   };
 
   return (
-    <div className="min-h-screen hero-gradient relative overflow-hidden">
+    <div className="min-h-screen bg-underwater relative overflow-hidden">
       <ParticleField />
       <div className="relative z-10 pb-20">
         <header className="text-center pt-8 pb-6 px-4">

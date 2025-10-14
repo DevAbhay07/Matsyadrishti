@@ -95,7 +95,7 @@ const HistoryPage = () => {
   };
 
   return (
-    <div className="min-h-screen hero-gradient relative overflow-hidden">
+    <div className="min-h-screen bg-underwater relative overflow-hidden">
       {/* Enhanced underwater effects */}
       <div className="underwater-rays"></div>
       <div className="caustic-waves"></div>

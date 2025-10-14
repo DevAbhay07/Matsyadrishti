@@ -85,7 +85,7 @@ const AboutPage = () => {
   ];
 
   return (
-    <div className="min-h-screen hero-gradient relative overflow-hidden">
+    <div className="min-h-screen bg-underwater relative overflow-hidden">
       {/* Particle field background */}
       <ParticleField />
 
