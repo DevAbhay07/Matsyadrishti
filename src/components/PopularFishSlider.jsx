@@ -80,17 +80,6 @@ const PopularFishSlider = () => {
               ))}
             </div>
           </div>
-          
-          {/* Scroll indicator for vertical scrolling */}
-          {popularFish.length > 9 && (
-            <div className="absolute bottom-2 right-2">
-              <div className="bg-white bg-opacity-20 rounded-full px-2 py-1">
-                <div className="text-xs text-white opacity-70">
-                  Scroll for more
-                </div>
-              </div>
-            </div>
-          )}
         </div>
       </div>
     </div>

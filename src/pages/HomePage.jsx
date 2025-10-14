@@ -33,38 +33,16 @@ const HomePage = () => {
     </div>
   );
 
-  const WaveBackground = () => (
-    <div className="absolute inset-0 overflow-hidden">
-      <svg className="absolute bottom-0 w-full h-56 text-marine-900 opacity-5" viewBox="0 0 1200 120" preserveAspectRatio="none">
-        <path d="M0,60 C300,120 600,0 900,60 C1050,90 1200,30 1200,60 L1200,120 L0,120 Z" fill="currentColor" className="animate-wave"/>
-      </svg>
-      <svg className="absolute bottom-0 w-full h-40 text-marine-800 opacity-10" viewBox="0 0 1200 120" preserveAspectRatio="none">
-        <path d="M0,80 C300,20 600,100 900,40 C1050,10 1200,70 1200,40 L1200,120 L0,120 Z" fill="currentColor" className="animate-wave" style={{animationDelay: '1s'}}/>
-      </svg>
-    </div>
-  );
+
 
   return (
-    <div className="min-h-screen bg-underwater relative overflow-hidden flex flex-col">
-      {/* Simplified background effects for mobile performance */}
-      <div className="underwater-rays opacity-60 hidden sm:block"></div>
-      <div className="caustic-waves opacity-50 hidden sm:block"></div>
-      
-      {/* Reduced floating bubbles for mobile */}
-      <div className="floating-bubble hidden sm:block"></div>
-      <div className="floating-bubble hidden sm:block"></div>
-      <div className="floating-bubble hidden sm:block"></div>
-      
-      {/* Background elements - reduced for mobile */}
-      <div className="hidden sm:block">
-        <ParticleField />
-      </div>
-      <WaveBackground />
+    <div className="min-h-screen bg-gradient-to-br from-yellow-50 via-white to-yellow-100 relative overflow-hidden flex flex-col">
+      {/* Light daisy white background effects - subtle and clean */}
       
       {/* Compact Title section */}
       <header className="flex-shrink-0 pt-4 sm:pt-6 px-4 sm:px-6">
         <div className="animate-fade-in">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white tracking-wide mb-1 drop-shadow-lg">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 tracking-wide mb-1">
             Matsya Drishti
           </h1>
         </div>
@@ -106,7 +84,7 @@ const HomePage = () => {
         
         {/* Popular Species Section - More responsive */}
         <div className="w-full">
-          <h2 className="text-lg sm:text-xl font-semibold text-white mb-4 text-left drop-shadow-md">Popular Species</h2>
+          <h2 className="text-lg sm:text-xl font-semibold text-gray-800 mb-4 text-left">Popular Species</h2>
           <PopularFishSlider />
         </div>
       </div>
