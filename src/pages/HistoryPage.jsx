@@ -127,7 +127,7 @@ const HistoryPage = () => {
                 <button
                   onClick={handleClearHistory}
                   disabled={clearing}
-                  className="btn-glass group text-red-400 border-red-400 border-opacity-50 hover:bg-red-900 hover:bg-opacity-20"
+                  className="btn-glass group text-white border-white border-opacity-50 hover:bg-white hover:bg-opacity-20"
                 >
                   <span className="flex items-center justify-center space-x-2">
                     <span>🗑️</span>
