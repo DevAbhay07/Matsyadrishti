@@ -1,15 +1,18 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { X, Camera as CameraIcon, RefreshCw } from 'lucide-react';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { X, Camera as CameraIcon, RefreshCw, Upload } from 'lucide-react';
 
 const ScannerScreen = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [isLoading, setIsLoading] = useState(true);
   const [isScanning, setIsScanning] = useState(false);
   const [error, setError] = useState(null);
   const [stream, setStream] = useState(null);
+  const [capturedImage, setCapturedImage] = useState(null);
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
+  const fileInputRef = useRef(null);
 
   // Dummy fish data for testing
   const dummyFishData = [
@@ -97,6 +100,22 @@ const ScannerScreen = () => {
     };
   }, []);
 
+  useEffect(() => {
+    // Handle captured image from location state (from ScanButton)
+    if (location.state && location.state.capturedImage) {
+      setCapturedImage(location.state.capturedImage);
+      // Clear the location state to prevent re-processing
+      navigate('/scanner', { replace: true, state: {} });
+    }
+  }, [location.state, navigate]);
+
+  useEffect(() => {
+    // Automatically process uploaded image when capturedImage is set
+    if (capturedImage) {
+      processImage(capturedImage);
+    }
+  }, [capturedImage]);
+
   const startCamera = async () => {
     try {
       setIsLoading(true);
@@ -147,23 +166,8 @@ const ScannerScreen = () => {
     }
   };
 
-  const handleCapture = () => {
+  const processImage = (imageDataUrl) => {
     setIsScanning(true);
-    
-    let imageDataUrl = null;
-    
-    // Capture image if camera is available
-    if (videoRef.current && canvasRef.current) {
-      const video = videoRef.current;
-      const canvas = canvasRef.current;
-      const context = canvas.getContext('2d');
-
-      canvas.width = video.videoWidth;
-      canvas.height = video.videoHeight;
-      context.drawImage(video, 0, 0);
-
-      imageDataUrl = canvas.toDataURL('image/jpeg', 0.8);
-    }
     
     // Simulate scanning delay
     setTimeout(() => {
@@ -181,6 +185,46 @@ const ScannerScreen = () => {
         } 
       });
     }, 2000); // 2 second delay to simulate processing
+  };
+
+  const handleCapture = () => {
+    let imageDataUrl = null;
+    
+    // Check if we have a captured image from upload
+    if (capturedImage) {
+      imageDataUrl = capturedImage;
+    } else if (videoRef.current && canvasRef.current) {
+      // Capture image from camera if available
+      const video = videoRef.current;
+      const canvas = canvasRef.current;
+      const context = canvas.getContext('2d');
+
+      canvas.width = video.videoWidth;
+      canvas.height = video.videoHeight;
+      context.drawImage(video, 0, 0);
+
+      imageDataUrl = canvas.toDataURL('image/jpeg', 0.8);
+    }
+    
+    processImage(imageDataUrl);
+  };
+
+  const handleFileUpload = (event) => {
+    const file = event.target.files[0];
+    if (file && file.type.startsWith('image/')) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const imageDataUrl = e.target.result;
+        setCapturedImage(imageDataUrl);
+        // Process the uploaded image
+        processImage(imageDataUrl);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const handleUploadClick = () => {
+    fileInputRef.current?.click();
   };
 
   const handleTestScan = () => {
@@ -339,9 +383,22 @@ const ScannerScreen = () => {
                 </button>
                 
                 <button
+                  onClick={handleUploadClick}
+                  disabled={isScanning}
+                  className="flex-1 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white py-4 rounded-xl font-medium flex items-center justify-center space-x-2 transition-all shadow-lg shadow-emerald-500/20 disabled:opacity-50 disabled:cursor-not-allowed group relative overflow-hidden"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-teal-400 opacity-0 group-hover:opacity-20 transition-opacity"></div>
+                  <Upload className="w-5 h-5" />
+                  <span className="text-sm font-semibold">Upload Image</span>
+                </button>
+              </div>
+              
+              {/* Secondary Actions */}
+              <div className="flex items-center space-x-3">
+                <button
                   onClick={handleClose}
                   disabled={isScanning}
-                  className="px-6 bg-blue-100/60 hover:bg-blue-100/80 text-gray-700 py-4 rounded-xl font-medium transition-colors backdrop-blur-sm disabled:opacity-50 shadow-sm"
+                  className="flex-1 bg-blue-100/60 hover:bg-blue-100/80 text-gray-700 py-4 rounded-xl font-medium transition-colors backdrop-blur-sm disabled:opacity-50 shadow-sm"
                 >
                   Cancel
                 </button>
@@ -353,6 +410,15 @@ const ScannerScreen = () => {
 
       {/* Hidden canvas for capturing */}
       <canvas ref={canvasRef} className="hidden" />
+      
+      {/* Hidden file input */}
+      <input
+        ref={fileInputRef}
+        type="file"
+        accept="image/*"
+        onChange={handleFileUpload}
+        className="hidden"
+      />
     </div>
   );
 };

@@ -23,7 +23,7 @@ The "Matsya Drishti" React application has been successfully created with all re
 
 3. **Pages Implemented**
    - HomePage.jsx (/) - Main dashboard
-   - ScanPage.jsx (/scan) - Camera/upload interface
+   - ScannerScreen.jsx (/scanner) - Camera interface
    - ResultPage.jsx (/result) - Analysis results
    - HistoryPage.jsx (/history) - Scan history
    - ProfilePage.jsx (/profile) - User settings

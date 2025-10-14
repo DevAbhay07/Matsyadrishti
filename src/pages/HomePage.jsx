@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import ScanButton from '../components/ScanButton';
 import PopularFishSlider from '../components/PopularFishSlider';
 import NavbarBottom from '../components/NavbarBottom';
 import Icons from '../components/Icons';
@@ -36,61 +35,67 @@ const HomePage = () => {
 
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-yellow-50 via-white to-sky-50 relative overflow-hidden flex flex-col">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-yellow-50 via-white to-sky-50 relative overflow-hidden">
       {/* Subtle daisy-blue background with gentle atmosphere */}
       
-      {/* Compact Title section */}
-      <header className="flex-shrink-0 pt-4 sm:pt-6 px-4 sm:px-6">
-        <div className="animate-fade-in">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 tracking-wide mb-1">
-            Matsya Drishti
-          </h1>
-        </div>
-      </header>
-      
-      {/* More compact main content */}
-      <div className={`flex-1 flex flex-col justify-start items-center px-4 sm:px-6 pt-6 sm:pt-8 pb-20 transition-all duration-700 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+      {/* Full viewport container with proper spacing for navbar */}
+      <div className="min-h-screen pb-20 flex flex-col">
+        {/* Compact Title section */}
+        <header className="flex-shrink-0 pt-4 sm:pt-6 px-4 sm:px-6">
+          <div className="animate-fade-in">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 tracking-wide mb-1">
+              Matsya Drishti
+            </h1>
+          </div>
+        </header>
         
-        {/* Compact Scan section */}
+        {/* Main content with flexible height */}
+        <div className={`flex-1 flex flex-col justify-start items-center px-4 sm:px-6 pt-6 sm:pt-8 transition-all duration-700 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        
+        {/* Unified Scan section */}
         <div className="mb-6 w-full max-w-sm">
-          {/* More compact glass panel */}
-          <div className="py-4 sm:py-6 px-4 sm:px-6 rounded-xl glass-panel relative overflow-hidden">
+          {/* Glass panel with unified scan button */}
+          <div className="py-6 sm:py-8 px-4 sm:px-6 rounded-xl glass-panel relative overflow-hidden">
             {/* Subtle accent line */}
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-300/60 to-transparent"></div>
             
             <div className="relative z-10 flex flex-col items-center">
-              {/* Smaller scan button for mobile */}
-              <div className="mb-4 text-center">
-                <ScanButton size="medium" />
-              </div>
-              
-              {/* Responsive start scan button */}
+              {/* Unified Square Scan Button */}
               <button
                 onClick={() => navigate('/scanner')}
-                className="btn-primary px-4 sm:px-6 py-3 sm:py-4 text-base sm:text-lg font-semibold
-                          flex items-center space-x-2 sm:space-x-3 transition-all duration-300 
-                          hover:scale-105 w-full justify-center"
+                className="w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-blue-500 via-blue-600 to-indigo-600 
+                          rounded-xl shadow-lg hover:shadow-xl transform transition-all duration-300 
+                          hover:scale-105 hover:from-blue-600 hover:via-blue-700 hover:to-indigo-700
+                          flex flex-col items-center justify-center group relative overflow-hidden
+                          border border-blue-400/20"
               >
-                <svg className="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M4 7C4 5.89543 4.89543 5 6 5H8L10 3H14L16 5H18C19.1046 5 20 5.89543 20 7V17C20 18.1046 19.1046 19 18 19H6C4.89543 19 4 18.1046 4 17V7Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="2"/>
-                </svg>
-                <span>Start Scan</span>
+                {/* Subtle shine effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent 
+                              rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
+                {/* Camera Icon */}
+                <Icons.Camera className="w-8 h-8 sm:w-10 sm:h-10 text-white mb-1 relative z-10" />
+                
+                {/* Scan Label */}
+                <span className="text-white text-xs sm:text-sm font-semibold relative z-10">Scan</span>
               </button>
             </div>
           </div>
         </div>
 
-        
-        {/* Popular Species Section - More responsive */}
-        <div className="w-full">
-          <h2 className="text-lg sm:text-xl font-semibold text-gray-800 mb-4 text-left">Popular Species</h2>
-          <PopularFishSlider />
+          
+          {/* Popular Species Section - Responsive with full height */}
+          <div className="w-full flex-1 flex flex-col">
+            <h2 className="text-lg sm:text-xl font-semibold text-gray-800 mb-4 text-left">Popular Species</h2>
+            <div className="flex-1">
+              <PopularFishSlider />
+            </div>
+          </div>
         </div>
-      </div>
 
-      {/* Bottom Navigation */}
-      <NavbarBottom />
+        {/* Bottom Navigation */}
+        <NavbarBottom />
+      </div>
     </div>
   );
 };

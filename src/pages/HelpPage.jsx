@@ -67,7 +67,7 @@ const HelpPage = () => {
       icon: '🔍',
       title: 'Start Scanning',
       description: 'Begin identifying fish with AI',
-      action: () => navigate('/scan'),
+      action: () => navigate('/scanner'),
       color: 'from-blue-500 to-cyan-500'
     },
     {

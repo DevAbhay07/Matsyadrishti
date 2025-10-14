@@ -116,7 +116,7 @@ const ScanButton = ({ className = '', size = 'large' }) => {
       document.body.style.height = '';
       
       // Navigate to scan page with captured image
-      navigate('/scan', { state: { capturedImage: imageDataUrl } });
+      navigate('/scanner', { state: { capturedImage: imageDataUrl } });
     }
   };
 

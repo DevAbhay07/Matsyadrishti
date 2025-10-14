@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
-import ScanPage from './pages/ScanPage';
 import ScannerScreen from './pages/ScannerScreen';
 import ResultPage from './pages/ResultPage';
 import HistoryPage from './pages/HistoryPage';
@@ -16,7 +15,6 @@ function App() {
       <div className="App min-h-screen">
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/scan" element={<ScanPage />} />
           <Route path="/scanner" element={<ScannerScreen />} />
           <Route path="/result" element={<ResultPage />} />
           <Route path="/history" element={<HistoryPage />} />

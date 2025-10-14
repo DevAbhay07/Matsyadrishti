@@ -53,16 +53,21 @@ const PopularFishSlider = () => {
   }
 
   return (
-    <div>
-      <div className="relative">
-        {/* Grid container with vertical scroll - seamless with background */}
-        <div className="relative mx-2 sm:mx-4">
+    <div className="h-full flex flex-col">
+      <div className="relative flex-1">
+        {/* Grid container with responsive height - seamless with background */}
+        <div className="relative mx-2 sm:mx-4 h-full">
           <div 
-            className="p-3 sm:p-4 max-h-80 overflow-y-auto scrollbar-hide"
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            className="p-3 sm:p-4 h-full overflow-y-auto scrollbar-hide"
+            style={{ 
+              scrollbarWidth: 'none', 
+              msOverflowStyle: 'none',
+              minHeight: '320px', // Minimum height for content
+              maxHeight: 'calc(100vh - 280px)' // Dynamic max height based on viewport
+            }}
           >
-            {/* 3x3 Grid layout - responsive */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3">
+            {/* Responsive Grid layout - adapts to screen size */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-2 sm:gap-3 md:gap-4 pb-4">
               {popularFish.map((fish, index) => (
                 <div
                   key={fish.id}
@@ -78,7 +83,15 @@ const PopularFishSlider = () => {
                   />
                 </div>
               ))}
+              
+              {/* Add empty cards to maintain grid structure if needed */}
+              {popularFish.length % 3 !== 0 && [...Array(3 - (popularFish.length % 3))].map((_, index) => (
+                <div key={`empty-${index}`} className="hidden sm:block" />
+              ))}
             </div>
+            
+            {/* Subtle bottom fade gradient to indicate more content or smooth ending */}
+            <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-white via-white/50 to-transparent pointer-events-none opacity-30" />
           </div>
         </div>
       </div>

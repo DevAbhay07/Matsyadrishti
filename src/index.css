@@ -288,12 +288,45 @@ body {
     scrollbar-width: none;  /* Firefox */
   }
 
-  /* Smooth scrolling */
+  /* Smooth scrolling and viewport fixes */
   html {
     scroll-behavior: smooth;
   }
+  
+  /* Viewport height fixes for mobile browsers */
+  html, body {
+    height: 100%;
+    overflow-x: hidden;
+  }
+  
+  /* Fix for mobile viewport height issues */
+  .min-h-screen {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+  }
+  
+  /* Responsive grid improvements */
+  .responsive-grid {
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  
+  @media (min-width: 640px) {
+    .responsive-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.75rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .responsive-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+    }
+  }
 
-  /* Mobile-first responsive utilities */
+  /* Enhanced Mobile-first responsive utilities */
   @media (max-width: 640px) {
     .mobile-compact {
       padding: 0.75rem;
@@ -305,6 +338,33 @@ body {
     
     .mobile-mb-2 {
       margin-bottom: 0.5rem;
+    }
+    
+    /* Mobile viewport optimizations */
+    .min-h-screen {
+      min-height: 100vh;
+      min-height: -webkit-fill-available;
+    }
+    
+    /* Grid responsive adjustments */
+    .grid-cols-2 {
+      gap: 0.5rem;
+    }
+  }
+  
+  /* Tablet responsive breakpoint */
+  @media (min-width: 641px) and (max-width: 1024px) {
+    .grid-cols-2.sm\:grid-cols-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.75rem;
+    }
+  }
+  
+  /* Desktop responsive breakpoint */
+  @media (min-width: 1025px) {
+    .grid-cols-2.sm\:grid-cols-3.lg\:grid-cols-3.xl\:grid-cols-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
     }
   }
 

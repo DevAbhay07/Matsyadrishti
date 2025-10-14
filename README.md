@@ -74,7 +74,7 @@ The project includes:
 
 ### Pages & Routes
 - `/` - **HomePage**: Main dashboard with scan button and popular fish
-- `/scan` - **ScanPage**: Camera/upload interface for fish images
+- `/scanner` - **ScannerScreen**: Camera interface for fish scanning
 - `/result` - **ResultPage**: Detailed analysis results and nutritional info
 - `/history` - **HistoryPage**: Previous scan history and statistics
 - `/profile` - **ProfilePage**: User settings and account management
@@ -140,7 +140,7 @@ matsya-drishti/
 │   │   └── Loader.jsx
 │   ├── pages/                  # Main application pages
 │   │   ├── HomePage.jsx
-│   │   ├── ScanPage.jsx
+│   │   ├── ScannerScreen.jsx
 │   │   ├── ResultPage.jsx
 │   │   ├── HistoryPage.jsx
 │   │   ├── ProfilePage.jsx

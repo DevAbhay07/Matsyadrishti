@@ -172,7 +172,7 @@ const HistoryPage = () => {
                     Start scanning fish to build your history!
                   </p>
                   <button
-                    onClick={() => navigate('/scan')}
+                    onClick={() => navigate('/scanner')}
                     className="btn-3d group"
                   >
                     <span className="relative z-10 flex items-center justify-center space-x-3">
@@ -244,7 +244,7 @@ const HistoryPage = () => {
             <section className="animate-slide-up" style={{animationDelay: `${0.6 + history.length * 0.1 + 0.2}s`}}>
               <div className="text-center">
                 <button
-                  onClick={() => navigate('/scan')}
+                  onClick={() => navigate('/scanner')}
                   className="btn-3d group"
                 >
                   <span className="relative z-10 flex items-center justify-center space-x-3">

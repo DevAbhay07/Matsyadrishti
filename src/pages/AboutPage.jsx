@@ -242,7 +242,7 @@ const AboutPage = () => {
               Experience the future of marine intelligence
             </p>
             <button
-              onClick={() => navigate('/scan')}
+              onClick={() => navigate('/scanner')}
               className="btn-glass w-full group"
             >
               <span className="flex items-center justify-center space-x-2">
