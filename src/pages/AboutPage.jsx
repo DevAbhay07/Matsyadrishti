@@ -93,10 +93,10 @@ const AboutPage = () => {
         {/* Header */}
         <header className="text-center pt-8 pb-6 px-4">
           <div className="animate-slide-down">
-            <h1 className="text-4xl font-bold aurora-text mb-4 glow-text">
+            <h1 className="text-4xl font-bold text-white mb-4 glow-text">
               About Matsya Drishti
             </h1>
-            <p className="text-gray-600 text-lg max-w-md mx-auto leading-relaxed">
+            <p className="text-marine-200 text-lg max-w-md mx-auto leading-relaxed">
               Revolutionizing marine intelligence through cutting-edge AI technology
             </p>
           </div>
@@ -108,12 +108,12 @@ const AboutPage = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-marine-900 via-marine-800 to-marine-900 opacity-10 rounded-3xl blur-2xl"></div>
             <div className="relative glass-panel">
               <div className="text-center mb-6">
-                <div className="text-6xl mb-4 text-blue-400 flex justify-center">
+                <div className="text-6xl mb-4 text-white flex justify-center">
                   <Icons.Wave className="w-16 h-16" />
                 </div>
-                <h2 className="text-2xl font-bold aurora-text glow-text mb-4">Our Mission</h2>
+                <h2 className="text-2xl font-bold text-white glow-text mb-4">Our Mission</h2>
               </div>
-              <p className="text-gray-600 leading-relaxed text-center">
+              <p className="text-marine-200 leading-relaxed text-center">
                 We're dedicated to making marine knowledge accessible to everyone. Through advanced AI and computer vision, 
                 we bridge the gap between complex marine science and everyday users, promoting ocean conservation and 
                 sustainable fishing practices worldwide.
@@ -133,20 +133,20 @@ const AboutPage = () => {
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-marine-400 to-neon-blue opacity-0 group-hover:opacity-10 rounded-2xl transition-opacity duration-500"></div>
                 <div className="relative z-10">
-                  <div className="text-2xl mb-2 transform group-hover:scale-110 transition-transform duration-300 text-blue-400">
+                  <div className="text-2xl mb-2 transform group-hover:scale-110 transition-transform duration-300 text-white">
                     {React.createElement(Icons[stat.icon], { className: "w-8 h-8 mx-auto" })}
                   </div>
-                  <div className="text-xl font-bold text-gradient mb-1 group-hover:text-neon-blue transition-colors duration-300">
+                  <div className="text-xl font-bold text-white mb-1 group-hover:text-white transition-colors duration-300">
                     {stat.value}
                   </div>
-                  <div className="text-xs font-medium text-gray-800 mb-1">
+                  <div className="text-xs font-medium text-white mb-1">
                     {stat.label}
                   </div>
-                  <div className="text-xs text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
+                  <div className="text-xs text-marine-400 group-hover:text-marine-300 transition-colors duration-300">
                     {stat.description}
                   </div>
                 </div>
-                <div className="absolute top-2 right-2 w-1.5 h-1.5 bg-blue-400 rounded-full opacity-60 transition-opacity duration-300"></div>
+                <div className="absolute top-2 right-2 w-1.5 h-1.5 bg-white rounded-full opacity-60 transition-opacity duration-300"></div>
               </div>
             ))}
           </div>
@@ -157,7 +157,7 @@ const AboutPage = () => {
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-marine-900 via-marine-800 to-marine-900 opacity-10 rounded-3xl blur-2xl"></div>
             <div className="relative glass-panel">
-              <h2 className="text-xl font-bold aurora-text glow-text mb-6 text-center">
+              <h2 className="text-xl font-bold text-white glow-text mb-6 text-center">
                 Advanced AI Features
               </h2>
               <div className="space-y-4">
@@ -174,14 +174,14 @@ const AboutPage = () => {
                       </div>
                     </div>
                     <div className="flex-1">
-                      <h3 className="font-semibold text-gray-800 group-hover:text-gray-700 transition-colors duration-300">
+                      <h3 className="font-semibold text-white group-hover:text-marine-200 transition-colors duration-300">
                         {feature.title}
                       </h3>
-                      <p className="text-sm text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
+                      <p className="text-sm text-marine-300 group-hover:text-marine-200 transition-colors duration-300">
                         {feature.description}
                       </p>
                     </div>
-                    <div className="text-gray-600 group-hover:text-gray-700 transform group-hover:translate-x-1 transition-all duration-300">
+                    <div className="text-marine-400 group-hover:text-marine-300 transform group-hover:translate-x-1 transition-all duration-300">
                       →
                     </div>
                   </div>
@@ -196,7 +196,7 @@ const AboutPage = () => {
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-marine-900 via-marine-800 to-marine-900 opacity-10 rounded-3xl blur-2xl"></div>
             <div className="relative glass-panel">
-              <h2 className="text-xl font-bold aurora-text glow-text mb-6 text-center">
+              <h2 className="text-xl font-bold text-white glow-text mb-6 text-center">
                 Meet Our Team
               </h2>
               <div className="space-y-4">
@@ -211,15 +211,15 @@ const AboutPage = () => {
                         {member.icon}
                       </div>
                       <div>
-                        <h3 className="font-semibold text-gray-800 group-hover:text-gray-700 transition-colors duration-300">
+                        <h3 className="font-semibold text-white group-hover:text-marine-200 transition-colors duration-300">
                           {member.name}
                         </h3>
-                        <p className="text-sm text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
+                        <p className="text-sm text-marine-300 group-hover:text-marine-200 transition-colors duration-300">
                           {member.role}
                         </p>
                       </div>
                     </div>
-                    <p className="text-xs text-gray-600 group-hover:text-gray-700 transition-colors duration-300 ml-12">
+                    <p className="text-xs text-marine-400 group-hover:text-marine-300 transition-colors duration-300 ml-12">
                       {member.expertise}
                     </p>
                   </div>
@@ -232,10 +232,10 @@ const AboutPage = () => {
         {/* Contact CTA */}
         <section className="px-4 py-8 text-center animate-fade-in" style={{animationDelay: '1s'}}>
           <div className="glass rounded-2xl p-6 max-w-sm mx-auto">
-            <div className="text-4xl mb-4 text-blue-400 flex justify-center">
+            <div className="text-4xl mb-4 text-white flex justify-center">
               <Icons.Rocket className="w-12 h-12" />
             </div>
-            <h3 className="text-lg font-bold aurora-text glow-text mb-2">
+            <h3 className="text-lg font-bold text-white glow-text mb-2">
               Join the Revolution
             </h3>
             <p className="text-marine-200 text-sm mb-4">
@@ -246,7 +246,7 @@ const AboutPage = () => {
               className="btn-glass w-full group"
             >
               <span className="flex items-center justify-center space-x-2">
-                <Icons.Wave className="w-5 h-5 text-blue-400" />
+                <Icons.Wave className="w-5 h-5 text-white" />
                 <span>Start Scanning</span>
               </span>
             </button>
