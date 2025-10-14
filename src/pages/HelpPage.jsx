@@ -107,7 +107,7 @@ const HelpPage = () => {
             <h1 className="text-3xl font-bold aurora-text mb-2 glow-text">
               Help & Support
             </h1>
-            <p className="text-marine-200 text-sm">
+            <p className="text-gray-600 text-sm">
               Everything you need to know about Matsya Drishti
             </p>
           </div>
@@ -136,10 +136,10 @@ const HelpPage = () => {
                           {action.icon}
                         </div>
                       </div>
-                      <h3 className="font-semibold text-white group-hover:text-marine-200 transition-colors duration-300 text-sm mb-1">
+                      <h3 className="font-semibold text-gray-800 group-hover:text-gray-700 transition-colors duration-300 text-sm mb-1">
                         {action.title}
                       </h3>
-                      <p className="text-xs text-marine-400 group-hover:text-marine-300 transition-colors duration-300">
+                      <p className="text-xs text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
                         {action.description}
                       </p>
                     </button>
@@ -172,11 +172,11 @@ const HelpPage = () => {
                           <div className="text-xl transform group-hover:scale-110 transition-transform duration-300">
                             {faq.icon}
                           </div>
-                          <h3 className="font-semibold text-white group-hover:text-marine-200 transition-colors duration-300">
+                          <h3 className="font-semibold text-gray-800 group-hover:text-gray-700 transition-colors duration-300">
                             {faq.question}
                           </h3>
                         </div>
-                        <div className={`text-marine-400 group-hover:text-marine-300 transform transition-all duration-300 ${
+                        <div className={`text-gray-600 group-hover:text-gray-700 transform transition-all duration-300 ${
                           expandedFaq === index ? 'rotate-180' : ''
                         }`}>
                           ⌄
@@ -186,7 +186,7 @@ const HelpPage = () => {
                       {expandedFaq === index && (
                         <div className="px-4 pb-4 animate-fade-in">
                           <div className="pl-8 border-l-2 border-marine-600 border-opacity-30">
-                            <p className="text-marine-300 text-sm leading-relaxed">
+                            <p className="text-gray-600 text-sm leading-relaxed">
                               {faq.answer}
                             </p>
                           </div>
@@ -249,10 +249,10 @@ const HelpPage = () => {
                         {feature.icon}
                       </div>
                       <div>
-                        <h3 className="font-semibold text-white group-hover:text-marine-200 transition-colors duration-300">
+                        <h3 className="font-semibold text-gray-800 group-hover:text-gray-700 transition-colors duration-300">
                           {feature.title}
                         </h3>
-                        <p className="text-sm text-marine-300 group-hover:text-marine-200 transition-colors duration-300">
+                        <p className="text-sm text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
                           {feature.description}
                         </p>
                       </div>
@@ -271,7 +271,7 @@ const HelpPage = () => {
                 <h2 className="text-xl font-bold aurora-text glow-text mb-4">
                   Still Need Help?
                 </h2>
-                <p className="text-marine-300 mb-6">
+                <p className="text-gray-600 mb-6">
                   Our support team is here to assist you with any questions or issues.
                 </p>
                 <div className="space-y-4">

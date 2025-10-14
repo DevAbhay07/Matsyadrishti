@@ -96,7 +96,7 @@ const AboutPage = () => {
             <h1 className="text-4xl font-bold aurora-text mb-4 glow-text">
               About Matsya Drishti
             </h1>
-            <p className="text-marine-200 text-lg max-w-md mx-auto leading-relaxed">
+            <p className="text-gray-600 text-lg max-w-md mx-auto leading-relaxed">
               Revolutionizing marine intelligence through cutting-edge AI technology
             </p>
           </div>
@@ -113,7 +113,7 @@ const AboutPage = () => {
                 </div>
                 <h2 className="text-2xl font-bold aurora-text glow-text mb-4">Our Mission</h2>
               </div>
-              <p className="text-marine-200 leading-relaxed text-center">
+              <p className="text-gray-600 leading-relaxed text-center">
                 We're dedicated to making marine knowledge accessible to everyone. Through advanced AI and computer vision, 
                 we bridge the gap between complex marine science and everyday users, promoting ocean conservation and 
                 sustainable fishing practices worldwide.
@@ -139,10 +139,10 @@ const AboutPage = () => {
                   <div className="text-xl font-bold text-gradient mb-1 group-hover:text-neon-blue transition-colors duration-300">
                     {stat.value}
                   </div>
-                  <div className="text-xs font-medium text-white mb-1">
+                  <div className="text-xs font-medium text-gray-800 mb-1">
                     {stat.label}
                   </div>
-                  <div className="text-xs text-marine-400 group-hover:text-marine-300 transition-colors duration-300">
+                  <div className="text-xs text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
                     {stat.description}
                   </div>
                 </div>
@@ -174,14 +174,14 @@ const AboutPage = () => {
                       </div>
                     </div>
                     <div className="flex-1">
-                      <h3 className="font-semibold text-white group-hover:text-marine-200 transition-colors duration-300">
+                      <h3 className="font-semibold text-gray-800 group-hover:text-gray-700 transition-colors duration-300">
                         {feature.title}
                       </h3>
-                      <p className="text-sm text-marine-300 group-hover:text-marine-200 transition-colors duration-300">
+                      <p className="text-sm text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
                         {feature.description}
                       </p>
                     </div>
-                    <div className="text-marine-400 group-hover:text-marine-300 transform group-hover:translate-x-1 transition-all duration-300">
+                    <div className="text-gray-600 group-hover:text-gray-700 transform group-hover:translate-x-1 transition-all duration-300">
                       →
                     </div>
                   </div>
@@ -211,15 +211,15 @@ const AboutPage = () => {
                         {member.icon}
                       </div>
                       <div>
-                        <h3 className="font-semibold text-white group-hover:text-marine-200 transition-colors duration-300">
+                        <h3 className="font-semibold text-gray-800 group-hover:text-gray-700 transition-colors duration-300">
                           {member.name}
                         </h3>
-                        <p className="text-sm text-marine-300 group-hover:text-marine-200 transition-colors duration-300">
+                        <p className="text-sm text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
                           {member.role}
                         </p>
                       </div>
                     </div>
-                    <p className="text-xs text-marine-400 group-hover:text-marine-300 transition-colors duration-300 ml-12">
+                    <p className="text-xs text-gray-600 group-hover:text-gray-700 transition-colors duration-300 ml-12">
                       {member.expertise}
                     </p>
                   </div>

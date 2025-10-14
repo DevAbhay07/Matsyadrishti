@@ -114,7 +114,7 @@ const HistoryPage = () => {
             <h1 className="text-3xl font-bold aurora-text mb-2 glow-text">
               Scan History
             </h1>
-            <p className="text-marine-200 text-sm">
+            <p className="text-gray-600 text-sm">
               View your previous fish identification results
             </p>
           </div>
@@ -155,7 +155,7 @@ const HistoryPage = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-marine-900 via-marine-800 to-marine-900 opacity-10 rounded-3xl blur-2xl"></div>
                 <div className="relative glass-panel p-8 text-center">
                   <div className="text-4xl mb-4 animate-float">⏳</div>
-                  <p className="text-marine-200">Loading history...</p>
+                  <p className="text-gray-600">Loading history...</p>
                 </div>
               </div>
             </section>
@@ -167,8 +167,8 @@ const HistoryPage = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-marine-900 via-marine-800 to-marine-900 opacity-10 rounded-3xl blur-2xl"></div>
                 <div className="relative glass-panel p-8 text-center">
                   <div className="text-6xl mb-4 animate-float">📝</div>
-                  <h3 className="text-xl font-bold text-marine-200 mb-2">No History Yet</h3>
-                  <p className="text-marine-400 mb-6">
+                  <h3 className="text-xl font-bold text-gray-700 mb-2">No History Yet</h3>
+                  <p className="text-gray-600 mb-6">
                     Start scanning fish to build your history!
                   </p>
                   <button
@@ -205,10 +205,10 @@ const HistoryPage = () => {
                         <div className="flex-1 min-w-0">
                           <div className="flex items-start justify-between mb-2">
                             <div>
-                              <h3 className="font-bold text-marine-200 group-hover:text-white transition-colors duration-300 truncate">
+                              <h3 className="font-bold text-gray-800 group-hover:text-gray-700 transition-colors duration-300 truncate">
                                 {item.result?.species || 'Unknown Species'}
                               </h3>
-                              <p className="text-sm text-marine-400 italic truncate">
+                              <p className="text-sm text-gray-600 italic truncate">
                                 {item.result?.scientificName || 'Scientific name unavailable'}
                               </p>
                             </div>
@@ -224,12 +224,12 @@ const HistoryPage = () => {
                                 {item.result.freshness}
                               </div>
                             )}
-                            <div className="text-xs text-marine-500">
+                            <div className="text-xs text-gray-600">
                               {item.scannedAt ? new Date(item.scannedAt).toLocaleDateString() : 'Unknown date'}
                             </div>
                           </div>
                         </div>
-                        <div className="text-marine-400 group-hover:text-marine-300 transform group-hover:translate-x-1 transition-all duration-300">
+                        <div className="text-gray-600 group-hover:text-gray-700 transform group-hover:translate-x-1 transition-all duration-300">
                           →
                         </div>
                       </div>
