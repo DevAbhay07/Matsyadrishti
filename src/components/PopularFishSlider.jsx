@@ -31,16 +31,16 @@ const PopularFishSlider = () => {
     return (
       <div className="animate-fade-in">
         <div className="relative">
-          {/* Loading grid container */}
-          <div className="relative glass-strong rounded-xl mx-2 sm:mx-4">
+          {/* Loading grid container - seamless with background */}
+          <div className="relative mx-2 sm:mx-4">
             <div className="p-3 sm:p-4 max-h-80 overflow-y-auto">
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3">
                 {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((i) => (
-                  <div key={i} className="bg-white bg-opacity-10 rounded-lg animate-pulse aspect-square">
-                    <div className="w-full h-2/3 bg-white bg-opacity-20 rounded-lg mb-2"></div>
+                  <div key={i} className="bg-yellow-50 bg-opacity-30 rounded-lg animate-pulse aspect-square">
+                    <div className="w-full h-2/3 bg-yellow-100 bg-opacity-40 rounded-lg mb-2"></div>
                     <div className="space-y-1 px-2">
-                      <div className="h-2 bg-white bg-opacity-15 rounded mx-auto w-3/4"></div>
-                      <div className="h-1.5 bg-white bg-opacity-10 rounded mx-auto w-1/2"></div>
+                      <div className="h-2 bg-yellow-200 bg-opacity-50 rounded mx-auto w-3/4"></div>
+                      <div className="h-1.5 bg-yellow-200 bg-opacity-30 rounded mx-auto w-1/2"></div>
                     </div>
                   </div>
                 ))}
@@ -55,8 +55,8 @@ const PopularFishSlider = () => {
   return (
     <div>
       <div className="relative">
-        {/* Grid container with vertical scroll */}
-        <div className="relative glass-strong rounded-xl mx-2 sm:mx-4">
+        {/* Grid container with vertical scroll - seamless with background */}
+        <div className="relative mx-2 sm:mx-4">
           <div 
             className="p-3 sm:p-4 max-h-80 overflow-y-auto scrollbar-hide"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}

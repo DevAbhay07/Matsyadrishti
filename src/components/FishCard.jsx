@@ -18,17 +18,20 @@ const FishCard = ({ fish, onClick, className = '' }) => {
 
   return (
     <div 
-      className={`group relative overflow-hidden fish-card ${className}`}
+      className={`group relative overflow-hidden fish-card bg-gradient-to-br from-blue-50 to-blue-25 rounded-lg shadow-sm ${className}`}
       onClick={() => onClick && onClick(fish)}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      style={{ 
+        background: 'linear-gradient(135deg, #E6F3FF 0%, #F5FAFF 100%)'
+      }}
     >
-      {/* Image container - responsive for both slider and grid */}
-      <div className="relative h-16 sm:h-20 md:h-24 rounded-lg overflow-hidden bg-gray-100 mb-2 flex-shrink-0">
-        {/* Loading skeleton */}
+      {/* Image container - complements blue gradient card */}
+      <div className="relative h-16 sm:h-20 md:h-24 rounded-lg overflow-hidden bg-blue-25/30 mb-2 flex-shrink-0">
+        {/* Loading skeleton - blend with blue gradient */}
         {!imageLoaded && (
-          <div className="absolute inset-0 bg-gray-200 animate-pulse">
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white via-white to-transparent opacity-30 animate-shimmer"></div>
+          <div className="absolute inset-0 bg-blue-100/40 animate-pulse">
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-50 via-blue-50 to-transparent opacity-50 animate-shimmer"></div>
           </div>
         )}
         
@@ -42,27 +45,27 @@ const FishCard = ({ fish, onClick, className = '' }) => {
           onLoad={handleImageLoad}
         />
         
-        {/* Simple overlay on hover */}
-        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300"></div>
+        {/* Subtle overlay on hover - blue theme */}
+        <div className="absolute inset-0 bg-blue-200 bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300"></div>
         
-        {/* Confidence badge - always visible */}
+        {/* Confidence badge - softened for seamless look */}
         {fish.confidence && (
-          <div className="absolute bottom-1 right-1 px-1.5 py-0.5 bg-green-500/80 backdrop-blur-sm rounded text-white text-xs font-medium">
+          <div className="absolute bottom-1 right-1 px-1.5 py-0.5 bg-green-400/70 rounded text-white text-xs font-medium shadow-sm">
             {fish.confidence}%
           </div>
         )}
       </div>
       
-      {/* Compact Content section */}
+      {/* Content section - seamless with background */}
       <div className="text-center px-2 pb-2">
-        <h3 className="font-medium text-gray-700 text-xs sm:text-sm group-hover:text-blue-600 transition-colors duration-300 leading-tight truncate">
+        <h3 className="font-medium text-gray-700 text-xs sm:text-sm group-hover:text-gray-900 transition-colors duration-300 leading-tight truncate">
           {fish.name}
         </h3>
       </div>
 
-      {/* Subtle hover effect */}
+      {/* Very subtle hover effect - complements blue gradient */}
       {isHovered && (
-        <div className="absolute inset-0 border border-blue-500 border-opacity-40 rounded-xl"></div>
+        <div className="absolute inset-0 bg-blue-100/20 rounded-lg transition-all duration-300"></div>
       )}
     </div>
   );

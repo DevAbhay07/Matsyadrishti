@@ -207,43 +207,50 @@ const ScannerScreen = () => {
   };
 
   return (
-    <div className="fixed inset-0 bg-gradient-to-b from-indigo-500 to-purple-600 flex flex-col">
+    <div className="fixed inset-0 bg-gradient-to-br from-blue-50 via-yellow-50 via-white to-sky-50 flex flex-col">
       {/* Header */}
-      <div className="relative flex items-center justify-between p-6 bg-black/20">
-        <div className="text-center flex-1">
-          <h1 className="text-2xl font-bold text-white mb-1">Matsya Drishti</h1>
-          <p className="text-white/80 text-xs uppercase tracking-wider">AI-Powered Marine Intelligence</p>
-          <p className="text-white/70 text-xs mt-1">Position the fish clearly in the frame and capture</p>
-        </div>
-        
+      <div className="relative flex items-center justify-between p-6">
+        {/* Top-left icon button */}
         <button 
           onClick={handleClose}
-          className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors backdrop-blur-sm"
+          className="w-10 h-10 rounded-full bg-blue-100/40 flex items-center justify-center hover:bg-blue-100/60 transition-colors backdrop-blur-sm shadow-sm"
         >
-          <X className="w-5 h-5 text-white" />
+          <X className="w-5 h-5 text-gray-700" />
+        </button>
+        
+        <div className="text-center flex-1 px-4">
+          <h1 className="text-2xl font-bold text-gray-800 mb-1">Matsya Drishti</h1>
+          <p className="text-gray-600 text-sm mt-1">Position the fish clearly in the frame and capture</p>
+        </div>
+        
+        {/* Top-right icon button */}
+        <button 
+          className="w-10 h-10 rounded-full bg-blue-100/40 flex items-center justify-center hover:bg-blue-100/60 transition-colors backdrop-blur-sm shadow-sm"
+        >
+          <CameraIcon className="w-5 h-5 text-gray-700" />
         </button>
       </div>
 
       {/* Camera View */}
       <div className="flex-1 flex flex-col px-4 pb-4">
         {error ? (
-          <div className="flex-1 bg-white/90 p-6 text-center rounded-xl flex flex-col items-center justify-center">
-            <div className="w-16 h-16 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-4">
-              <CameraIcon className="w-8 h-8 text-red-500" />
+          <div className="flex-1 bg-white/95 p-6 text-center rounded-xl flex flex-col items-center justify-center shadow-lg" style={{ background: 'linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%)' }}>
+            <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
+              <CameraIcon className="w-8 h-8 text-blue-500" />
             </div>
             <h4 className="text-lg font-semibold text-gray-800 mb-2">Camera Access Required</h4>
             <p className="text-gray-600 mb-6 text-sm leading-relaxed">{error}</p>
             <div className="flex gap-3 justify-center">
               <button
                 onClick={handleRetry}
-                className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2.5 rounded-md font-medium transition-colors flex items-center justify-center space-x-2"
+                className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2.5 rounded-lg font-medium transition-colors flex items-center justify-center space-x-2 shadow-sm"
               >
                 <RefreshCw className="w-4 h-4" />
                 <span>Try Again</span>
               </button>
               <button
                 onClick={handleClose}
-                className="bg-gray-200 hover:bg-gray-300 text-gray-700 px-6 py-2.5 rounded-md font-medium transition-colors"
+                className="bg-blue-100 hover:bg-blue-200 text-gray-700 px-6 py-2.5 rounded-lg font-medium transition-colors"
               >
                 Back to Home
               </button>
@@ -264,24 +271,24 @@ const ScannerScreen = () => {
               
               {/* Loading State */}
               {isLoading && (
-                <div className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center text-white rounded-2xl">
-                  <div className="w-16 h-16 border-4 border-white/20 border-t-white rounded-full animate-spin mb-4"></div>
+                <div className="absolute inset-0 bg-blue-900/40 flex flex-col items-center justify-center text-white rounded-2xl backdrop-blur-sm">
+                  <div className="w-16 h-16 border-4 border-blue-200/30 border-t-blue-400 rounded-full animate-spin mb-4"></div>
                   <p className="text-sm font-medium text-white">Initializing Camera...</p>
                 </div>
               )}
 
               {/* Scanning State */}
               {isScanning && (
-                <div className="absolute inset-0 bg-black/80 flex flex-col items-center justify-center text-white rounded-2xl">
-                  <div className="w-20 h-20 border-4 border-purple-400/20 border-t-purple-400 rounded-full animate-spin mb-6"></div>
+                <div className="absolute inset-0 bg-blue-900/60 flex flex-col items-center justify-center text-white rounded-2xl backdrop-blur-sm">
+                  <div className="w-20 h-20 border-4 border-blue-200/30 border-t-blue-400 rounded-full animate-spin mb-6"></div>
                   <div className="text-center">
                     <p className="text-lg font-semibold text-white mb-2">Analyzing Fish...</p>
-                    <p className="text-sm text-purple-200">AI is processing your capture</p>
+                    <p className="text-sm text-blue-200">AI is processing your capture</p>
                   </div>
                   <div className="mt-6 flex space-x-2">
-                    <div className="w-2 h-2 bg-purple-400 rounded-full animate-bounce"></div>
-                    <div className="w-2 h-2 bg-purple-400 rounded-full animate-bounce" style={{animationDelay: '0.1s'}}></div>
-                    <div className="w-2 h-2 bg-purple-400 rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></div>
+                    <div className="w-2 h-2 bg-blue-400 rounded-full animate-bounce"></div>
+                    <div className="w-2 h-2 bg-blue-400 rounded-full animate-bounce" style={{animationDelay: '0.1s'}}></div>
+                    <div className="w-2 h-2 bg-blue-400 rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></div>
                   </div>
                 </div>
               )}
@@ -291,23 +298,23 @@ const ScannerScreen = () => {
                 <div className="absolute inset-0 pointer-events-none">
                   <div className="absolute inset-0 flex items-center justify-center">
                     {/* Main frame */}
-                    <div className="border-2 border-purple-400 absolute inset-10 shadow-[0_0_15px_rgba(147,51,234,0.5)] rounded-lg"></div>
+                    <div className="border-2 border-blue-400 absolute inset-10 shadow-[0_0_15px_rgba(59,130,246,0.5)] rounded-lg"></div>
                     
                     {/* Corner markers */}
-                    <div className="absolute top-10 left-10 w-12 h-12 border-l-4 border-t-4 border-purple-400 rounded-tl-xl"></div>
-                    <div className="absolute top-10 right-10 w-12 h-12 border-r-4 border-t-4 border-purple-400 rounded-tr-xl"></div>
-                    <div className="absolute bottom-10 left-10 w-12 h-12 border-l-4 border-b-4 border-purple-400 rounded-bl-xl"></div>
-                    <div className="absolute bottom-10 right-10 w-12 h-12 border-r-4 border-b-4 border-purple-400 rounded-br-xl"></div>
+                    <div className="absolute top-10 left-10 w-12 h-12 border-l-4 border-t-4 border-blue-400 rounded-tl-xl"></div>
+                    <div className="absolute top-10 right-10 w-12 h-12 border-r-4 border-t-4 border-blue-400 rounded-tr-xl"></div>
+                    <div className="absolute bottom-10 left-10 w-12 h-12 border-l-4 border-b-4 border-blue-400 rounded-bl-xl"></div>
+                    <div className="absolute bottom-10 right-10 w-12 h-12 border-r-4 border-b-4 border-blue-400 rounded-br-xl"></div>
                     
                     {/* Center crosshair */}
                     <div className="absolute top-1/2 left-1/2 w-12 h-12 transform -translate-x-1/2 -translate-y-1/2">
-                      <div className="absolute top-1/2 left-0 w-full h-0.5 bg-purple-400 transform -translate-y-1/2 opacity-80"></div>
-                      <div className="absolute left-1/2 top-0 h-full w-0.5 bg-purple-400 transform -translate-x-1/2 opacity-80"></div>
-                      <div className="absolute inset-0 border border-purple-400 rounded-full animate-ping opacity-30"></div>
+                      <div className="absolute top-1/2 left-0 w-full h-0.5 bg-blue-400 transform -translate-y-1/2 opacity-80"></div>
+                      <div className="absolute left-1/2 top-0 h-full w-0.5 bg-blue-400 transform -translate-x-1/2 opacity-80"></div>
+                      <div className="absolute inset-0 border border-blue-400 rounded-full animate-ping opacity-30"></div>
                     </div>
                     
                     {/* Helper text */}
-                    <div className="absolute top-16 left-1/2 transform -translate-x-1/2 bg-black/30 px-4 py-1.5 rounded-full">
+                    <div className="absolute top-16 left-1/2 transform -translate-x-1/2 bg-blue-900/40 px-4 py-1.5 rounded-full backdrop-blur-sm">
                       <p className="text-white text-xs font-medium">Center fish in frame</p>
                     </div>
                   </div>
@@ -316,15 +323,15 @@ const ScannerScreen = () => {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-col space-y-3 py-6 bg-gradient-to-t from-black/30 to-transparent">
+            <div className="flex flex-col space-y-3 py-6 bg-gradient-to-t from-blue-100/30 to-transparent backdrop-blur-sm">
               {/* Primary Actions */}
               <div className="flex items-center space-x-3">
                 <button
                   onClick={handleCapture}
                   disabled={isLoading || isScanning}
-                  className="flex-1 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white py-4 rounded-xl font-medium flex items-center justify-center space-x-2 transition-all shadow-lg shadow-purple-500/20 disabled:opacity-50 disabled:cursor-not-allowed group relative overflow-hidden"
+                  className="flex-1 bg-gradient-to-r from-blue-500 to-sky-500 hover:from-blue-600 hover:to-sky-600 text-white py-4 rounded-xl font-medium flex items-center justify-center space-x-2 transition-all shadow-lg shadow-blue-500/20 disabled:opacity-50 disabled:cursor-not-allowed group relative overflow-hidden"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-indigo-400 opacity-0 group-hover:opacity-20 transition-opacity"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-sky-400 opacity-0 group-hover:opacity-20 transition-opacity"></div>
                   <CameraIcon className="w-5 h-5" />
                   <span className="text-sm font-semibold">
                     {isScanning ? 'Analyzing...' : isLoading ? 'Loading...' : 'Capture & Identify'}
@@ -334,23 +341,11 @@ const ScannerScreen = () => {
                 <button
                   onClick={handleClose}
                   disabled={isScanning}
-                  className="px-6 bg-white/10 hover:bg-white/20 text-white py-4 rounded-xl font-medium transition-colors backdrop-blur-sm disabled:opacity-50"
+                  className="px-6 bg-blue-100/60 hover:bg-blue-100/80 text-gray-700 py-4 rounded-xl font-medium transition-colors backdrop-blur-sm disabled:opacity-50 shadow-sm"
                 >
                   Cancel
                 </button>
               </div>
-
-              {/* Test Button */}
-              <button
-                onClick={handleTestScan}
-                disabled={isScanning}
-                className="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-3 rounded-xl font-medium flex items-center justify-center space-x-2 transition-all shadow-lg disabled:opacity-50"
-              >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-                <span className="text-sm font-medium">🐟 Test with Dummy Data</span>
-              </button>
             </div>
           </>
         )}

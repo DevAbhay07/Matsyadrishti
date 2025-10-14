@@ -36,8 +36,8 @@ const HomePage = () => {
 
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-yellow-50 via-white to-yellow-100 relative overflow-hidden flex flex-col">
-      {/* Light daisy white background effects - subtle and clean */}
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-yellow-50 via-white to-sky-50 relative overflow-hidden flex flex-col">
+      {/* Subtle daisy-blue background with gentle atmosphere */}
       
       {/* Compact Title section */}
       <header className="flex-shrink-0 pt-4 sm:pt-6 px-4 sm:px-6">
