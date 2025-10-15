@@ -31,22 +31,40 @@ const AboutPage = () => {
 
   const teamMembers = [
     {
-      name: "Dr. Sarah Ocean",
-      role: "Marine Biologist & AI Researcher",
-      icon: "🧬",
-      expertise: "Deep Learning, Marine Ecosystem Analysis"
+      name: "Abhay Yadav",
+      role: "Frontend developer",
+      icon: "💻",
+      expertise: "Focuses on React and UI/UX design for seamless user experiences"
     },
     {
-      name: "Alex Rivera",
-      role: "Computer Vision Engineer",
-      icon: "👁️",
-      expertise: "Image Recognition, Neural Networks"
+      name: "Sahaj mishra",
+      role: "Backend developer",
+      icon: "🛠️",
+      expertise: "Specializes in Node.js and database management for robust backend systems"
     },
     {
-      name: "Dr. Kai Tanaka",
-      role: "Ichthyologist",
-      icon: "🐠",
-      expertise: "Fish Species Classification, Marine Biology"
+      name: "Vivek Rawat",
+      role: "ML Engineer",
+      icon: "🤖",
+      expertise: "Specializes in computer vision and AI model development for marine species recognition"
+    },
+    {
+      name: "Aditi Shaw",
+      role: "Research and model training",
+      icon: "🔍",
+      expertise: "Focuses on data collection, annotation, and training AI models for accuracy"
+    },
+    {
+      name: "Naman pandey",
+      role: "data analyst and nlp engineer",
+      icon: "🔬",
+      expertise: "Focuses on marine biology research and natural language processing for data insights"
+    },
+    {
+      name: "Jaiveer Singh",
+      role: "data scientist",
+      icon: "📊",
+      expertise: "Focuses on data analysis and machine learning for marine ecosystem insights"
     }
   ];
 
